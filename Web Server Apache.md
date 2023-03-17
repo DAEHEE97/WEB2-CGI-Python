@@ -48,21 +48,25 @@ Apache HTTP Server, also known as Apache httpd, is a popular open-source web ser
 
 
 6. cgid, cgi 활성화
->```
+```
 <IfModule !mpm_prefork_module>
 	LoadModule cgid_module lib/httpd/modules/mod_cgid.so
 </IfModule>
 <IfModule mpm_prefork_module>
 	LoadModule cgi_module lib/httpd/modules/mod_cgi.so
 </IfModule>
+```
 
 
 7. python 파일 에 관해서 CGI 실행
->```
+
+```
 <Files *.py>
     Options ExecCGI
     AddHandler cgi-script .py
 </Files>
+
+```
 
 
 8. Apache 서버 재시작 
